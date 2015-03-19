@@ -16,41 +16,58 @@ state.egypt.prototype = {
 	this.load.image('tiles','assets/tiles/tiles3.png');
 	this.load.image('door','assets/door.jpg');
 	this.load.image('key','assets/key.png');
+	this.load.image('artifact','assets/artifact.png');
+
     },
 
     create: function(){
-	this.physics.startSystem(Phaser.Physics.ARCADE);
+
+	this.jump = this.add.audio('jump');
+	this.music = this.add.audio('thriller');
+	this.music.volume = 0.8;
+	this.music.loop = true;
+	this.music.play();
+
 
 	//Importing tilemap tiles
 	this.map = this.add.tilemap('map');
 	this.map.addTilesetImage('tiles3','tiles');
 	this.map.addTilesetImage('key');
 	this.map.addTilesetImage('door');
+	this.map.addTilesetImage('artifact');
 	this.layer = this.map.createLayer('maze');
 	this.boundsLayer = this.map.createLayer('enemyBounds');
 //	this.doorLayer = this.map.createLayer("gate");
 	//this.keyLayer = this.map.createLayer("key");
 	this.layer.resizeWorld(); //Resize game world to layer
 	
+	this.physics.startSystem(Phaser.Physics.ARCADE);
+	this.physics.arcade.enable(this.boundsLayer);
 
 	//Importing key object from the map
 	this.doorKeys = this.add.group();
 	this.doorKeys.enableBody = true;
 
 	this.map.createFromObjects('key',145,'key',0,true,false,this.doorKeys);
+    
+	//importing artifact object
+	this.artifacts = this.add.group();
+	this.artifacts.enableBody = true;
+	this.map.createFromObjects('artifact',146,'artifact',0,true,false,this.artifacts);
+
 	//Importing door object from the map
 	this.doors = this.add.group();
 	this.doors.enableBody = true;
-	this.doors.immovable = true;
 
 	this.map.createFromObjects('gate',144,'door',0,true,false,this.doors);
+	this.doorBody;
 	
-	//this.layer = this.map.createLayer('rename');
-	//this.layer.resizeWorld();
 	
 	//We use tile indexes 44, 55 and 66
 	this.map.setCollisionBetween(0,67); 
-	this.map.setCollision(132); //Is an ice cube that will check the bounds to prevent NPC from falling
+	this.map.setCollisionBetween(0,133,true,'enemyBounds'); //Is an ice cube that will check the bounds to prevent NPC from falling
+
+//	this.map.setCollision(0,144,true,'gate'); //Door shit
 	this.boundsLayer.alpha = 0;
 	
 	//Spawning in the player, inherting from it's parent Game
@@ -75,9 +92,17 @@ state.egypt.prototype = {
     update: function(){
 
 	this.physics.arcade.collide(this.player, this.layer,function(){ jumpEnable = true; },null,this);
+
 	this.physics.arcade.collide(this.enemies, this.layer);
-	this.physics.arcade.collide(this.player, this.doors,this.openDoor,null,this);
+
+	this.physics.arcade.collide(this.enemies, this.boundsLayer);
+
+	this.physics.arcade.overlap(this.player, this.doors, this.openDoor,null,this); //doesn't work
+
 	this.physics.arcade.overlap(this.player, this.doorKeys, this.collectKey,null,this);
+
+	this.physics.arcade.overlap(this.player, this.artifacts, this.collectArtifact, null,this);
+
 	
 	this.player.body.velocity.x = 0;
 
@@ -104,6 +129,8 @@ state.egypt.prototype = {
 	if(this.input.keyboard.isDown(keys.UP) &&
 	   jumpEnable === true){
 	    
+	    this.jump.volume = 0.4;
+	    this.jump.play();
 	    this.player.body.velocity.y = -225;
 	    jumpEnable = false;
 	}
@@ -112,7 +139,7 @@ state.egypt.prototype = {
 
     spawnEnemy: function() {
 	
-	for (var i=0; i<45; i++) {
+	for (var i=0; i<25; i++) {
 	    
 	    this.enemy = this.enemies.create(this.world.randomX,this.rnd.integerInRange(20,this.world.height - 40),'mummy');
 	    this.physics.arcade.enable(this.enemy);
@@ -150,8 +177,19 @@ state.egypt.prototype = {
 	collectedKey = true;
     },
 
+    doorBody: function(){
+	this.doors.forEach(function(door) {
+	    this.physics.arcade.enable(this.door);
+	    this.door.body.immovable = true;
+	},this);
+    },
     openDoor: function(player, door){
-	    door.kill();
+	//console.log("works");
+    },
+
+    collectArtifact: function(player, artifact){
+	artifact.kill();
+	this.state.start('textScene2');
     }
 
 }

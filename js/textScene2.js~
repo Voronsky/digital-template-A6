@@ -5,8 +5,6 @@ state.textScene1 = function (game) {
 state.textScene1.prototype = {
 
     preload: function(){
-	this.load.audio('thriller',['assets/audio/thriller.mp3']);
-	this.load.audio('jump',['assets/audio/mario_jump.mp3']);
 
     },
     
@@ -27,7 +25,7 @@ state.textScene1.prototype = {
     },
     
     introText: function() {
-	this.intro.setText("Cellphone screen: Don't ask, Don't think.\nWe need you.\nGo to Egypt and help us find an artifact.\n<click mouse to continue>");
+	this.intro.setText("Alright got the artifact!\n I wonder if he,\n will still be there\n where to return his cellphone.\n<click mouse to continue>");
     },
 
     startGame: function() {
