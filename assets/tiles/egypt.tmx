@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="23">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="24">
  <tileset firstgid="1" name="tiles3" tilewidth="48" tileheight="48">
   <image source="tiles3.png" trans="ffffff" width="560" height="640"/>
  </tileset>
@@ -9,9 +9,12 @@
  <tileset firstgid="145" name="key" tilewidth="24" tileheight="48">
   <image source="../key.png" trans="ffffff" width="24" height="48"/>
  </tileset>
+ <tileset firstgid="146" name="artifact" tilewidth="28" tileheight="28">
+  <image source="../artifact.png" trans="ffffff" width="28" height="28"/>
+ </tileset>
  <layer name="maze" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJztmNEOwyAIRf2hvfe9//9PSx+aEAJyL6it2W5itlkVjgq6tsbps3n5JR1PO7BYf15Ou8XJ0fLMO+aFLO+ueTDDy+b9j7AjbR0PltGsmnlH3sq5npnbGUJ9iLgy+/kJIT6gMcru5yfU8+Gq1/7fdZ52X1/NyZ4zsv+bee/6LK+1L97Meytzj7D6vJlX+sbyenlrxVmKzGnURvrq8a7m6/mM8kbPoxLt2xOwxeoQn9Z3rw8yX9W5nxG/zLrrPtXnEcfbeGfFP9uOUWY8dB9H/XflreyP1arwZv3dmTfjO9OHzenoeJk+WdujeTNzzahqm2nL3LsY373fkb8Z2+zcMD4g48m2Ud8R8z2CV4+D2vfW9yreuxeU17KdWQ9P8n6d4dXtvfdNmZi3xq/w3qxn63N7Plg+ee8TM7xy3FMUpJ+lUxV0nXvxG/0PR2TZR3l7bTQv64dVX+X15nslL5PvKry9/bWKF4njEbxRrp7Jq+uZotm9GKjYQArCe3bqM7zeOq1gRnhlPSM0BxxAu6o8X6K1HWFDKnOOZvTW9c3uSxk3kS9I7LQ2l5cdU4+h6708HvlZ2V+zeK07Dbq+uq5nh9UKXm3LG29GLmee3bLuoJ793v3da1PhjWK9wsv+R9JjIHNSEZMzUd6Mb1b8jmZmzwiGl/HNyr+jeTNnYsRbia3dysX7BXRzEL0=
+   eJztmEGOwyAMRblQ99nn/nequkCyLBv/bwMJmvkSmg4B2w+wQ9sap8/h7S/pejqAzfrn5XRanlwtz3xiXcjynloHM7xs3f8IP9LX9WCbzaqZT+StvNcza7tCaAwRV+Y8PyEkBjRH2fP8hEYx/Pp1/L3P0+n7qznZ94yc/2be3p/ltc7Fm3m7MvcIa86beWVsLK9Xt3a8S5E1jcbIWD3e3XyjmFHe6HnUonN7A75YXeKv9dmbg6xXde1X5C+z73pO9XnE8TbeVfnPjmOUsYee42j+qbyV87FbFd5svCfzZmJn5rA1HbWXmZP1PZs3s9aMqr6Zscy9i4nd+z+KN+ObXRsmBsSeHBvNnbHeM3i1Hda3ZcP77QXltfxn9sOTvF+jzN7edl6LOZPzlv0Kb2e925jbi8GKyfs9McMr7d6iIfMs3aqh+zzK3+h7OCLLP8o7GqN52Tis/iqvt947eZl6V+Edna9dvEgez+CNavVKXt3PNM3u5UDFB9IQ3nvQn+H19mkHM8Ir+xmhNeACxlXlxRLt7QwfUpn3aEZv3d/suZR5E8WC5E5ra3lZm9qG7vfqeBRn5Xyt4rXuNOj+6r6RH1Yreb2649lbUcuZZ13WHdTzP7q/e2MqvEiuZ3nZ70jaBrImFbHrMYq1EpuVv7OZ0TOQ4WVis+ovcn9jVM0BK+ZKbp3WfrxfiDATqQ==
   </data>
  </layer>
  <layer name="enemyBounds" width="60" height="50">
@@ -24,5 +27,8 @@
  </objectgroup>
  <objectgroup name="key">
   <object id="22" gid="145" x="432" y="2160"/>
+ </objectgroup>
+ <objectgroup name="artifact">
+  <object id="23" gid="146" x="1056" y="1776"/>
  </objectgroup>
 </map>
