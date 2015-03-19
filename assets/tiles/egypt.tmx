@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="23">
  <tileset firstgid="1" name="tiles3" tilewidth="48" tileheight="48">
   <image source="tiles3.png" trans="ffffff" width="560" height="640"/>
  </tileset>
+ <tileset firstgid="144" name="door" tilewidth="68" tileheight="145">
+  <image source="../door.jpg" trans="ffffff" width="79" height="154"/>
+ </tileset>
+ <tileset firstgid="145" name="key" tilewidth="24" tileheight="48">
+  <image source="../key.png" trans="ffffff" width="24" height="48"/>
+ </tileset>
  <layer name="maze" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJztlluuwyAMRNlQ//nP/vdURSoSSsH2jIHgpiOh28vDnsMzKWF6BS9PUr7bwGL9eTFFOyc58cwR7wWWN+o9yPAy935O37nyjWUEq6SIvJ69y8ztDFk9eM9pJN4Rd1IE3rP+ylfq2Dw78566crLvzO68pf4pvEWjviN25q29zeCd9ZZa5lTr80rf7HfzSZ6tvDN81zoMuVDl6m/rd2+MZb68vDPOL7Lu1zHedo1jN95Z5x/th4iJZ93H2viovJ79sVoeXtZvZF7GOzKGvdu1eIhG5fwFXpRBU/2tNoOXfY+Q3OjcIB4s8eq+o3hH3c+ID4tmrW/PC7MePTHf1721tfCiYvdfS4X1+BTUQ8uTdQySp/Zo8SnxInFaPlr/S2PQ+Civ1MfL2/JnHaP124lX8qf1Q2Ltxsu8J0isVbzXeqRoPFL+kcXCewj1v8hb1yNieWeo50Vb2xE5aq3mldpWrq93X2p5JCZpjRHNWF8vr9TG7OFenJ4YXimX5sUSS2vTcuzEO/IuR9qKmPdI8tET+35JZ13K0dOo+9l79qzxn8CLvhGReZk3UeP1nK1o5eR9A8667PU=
+   eJztmNEOwyAIRf2hvfe9//9PSx+aEAJyL6it2W5itlkVjgq6tsbps3n5JR1PO7BYf15Ou8XJ0fLMO+aFLO+ueTDDy+b9j7AjbR0PltGsmnlH3sq5npnbGUJ9iLgy+/kJIT6gMcru5yfU8+Gq1/7fdZ52X1/NyZ4zsv+bee/6LK+1L97Meytzj7D6vJlX+sbyenlrxVmKzGnURvrq8a7m6/mM8kbPoxLt2xOwxeoQn9Z3rw8yX9W5nxG/zLrrPtXnEcfbeGfFP9uOUWY8dB9H/XflreyP1arwZv3dmTfjO9OHzenoeJk+WdujeTNzzahqm2nL3LsY373fkb8Z2+zcMD4g48m2Ud8R8z2CV4+D2vfW9yreuxeU17KdWQ9P8n6d4dXtvfdNmZi3xq/w3qxn63N7Plg+ee8TM7xy3FMUpJ+lUxV0nXvxG/0PR2TZR3l7bTQv64dVX+X15nslL5PvKry9/bWKF4njEbxRrp7Jq+uZotm9GKjYQArCe3bqM7zeOq1gRnhlPSM0BxxAu6o8X6K1HWFDKnOOZvTW9c3uSxk3kS9I7LQ2l5cdU4+h6708HvlZ2V+zeK07Dbq+uq5nh9UKXm3LG29GLmee3bLuoJ793v3da1PhjWK9wsv+R9JjIHNSEZMzUd6Mb1b8jmZmzwiGl/HNyr+jeTNnYsRbia3dysX7BXRzEL0=
   </data>
  </layer>
  <layer name="enemyBounds" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJztlksOgCAMRLk89zYuTIwBQVrqtNO3MgaYPpRPKYkG9e8CjEnf2LD5XrB5P31r410k2H2TxBq2f5DJl8n1JILvrINH19Z5PuPh9R4g8WWDzZnN98TrOl4lgi/bfqXla/XtpRlaNa6O87Ufm6+Uv313s3K/mh3XyvlLzi5f7bEQckag1HGxux42X0S8nBtasPmu4sm3Fvn5iOKbZ57vnBGRfEfrDmXO70j3CM++vedR/7e2aM6Wvr22lnOCkIVQg2UWQg2WWQg1eM/qgVCDJWy+iR8Oe/87Ow==
+   eJztl9EOgCAIRf15/7v54NaaZYnQhct5aq4JxyVQKckO6t8JGJO+sWHz7bB5X33rYC0ybL5JYg3b/WLyZXJtRPB96+DRddTP33h4nQMkvmywObP5Nrze41VYfBkczyD0rB1778xvdS/LecebrzRfBF/tGPXmWYpV7f4aR8tXY7+/48xAyaOjnQ+bLyLafQMNNt9VPPnWIu+PKL7Z82ITyXd27xBdpTXCs+/KrD6rq2jO0v+RL75371qeCUIstG9gF+n7vO4dBC+EHCxh8038cADnCjgd
   </data>
  </layer>
+ <objectgroup name="gate">
+  <object id="17" gid="144" x="1344" y="1200"/>
+ </objectgroup>
+ <objectgroup name="key">
+  <object id="22" gid="145" x="432" y="2160"/>
+ </objectgroup>
 </map>
