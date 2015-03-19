@@ -19,7 +19,7 @@ state.textScene1.prototype = {
 	if(this.input.activePointer.isDown){
 	   this.intro.setText("....");
 	    //Event delay
-	    this.time.events.add(Phaser.Timer.SECOND*3,this.startGame,this);
+	    this.time.events.add(Phaser.Timer.SECOND*4,this.startGame,this);
 	}
     },
     
@@ -28,7 +28,6 @@ state.textScene1.prototype = {
     },
 
     startGame: function() {
-	this.state.resume('Game');
-	
+	this.state.start('egypt');
     }
 }
