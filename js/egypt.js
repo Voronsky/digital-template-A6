@@ -1,5 +1,6 @@
 var keys = Phaser.Keyboard;
 var jumpEnable = false;
+var collectedKey = false;
 
 state.egypt = function (game) {
 
@@ -13,6 +14,8 @@ state.egypt.prototype = {
 
 	this.load.tilemap('map','assets/egypt.json',null,Phaser.Tilemap.TILED_JSON);
 	this.load.image('tiles','assets/tiles/tiles3.png');
+	this.load.image('door','assets/door.jpg');
+	this.load.image('key','assets/key.png');
     },
 
     create: function(){
@@ -21,10 +24,26 @@ state.egypt.prototype = {
 	//Importing tilemap tiles
 	this.map = this.add.tilemap('map');
 	this.map.addTilesetImage('tiles3','tiles');
+	this.map.addTilesetImage('key');
+	this.map.addTilesetImage('door');
 	this.layer = this.map.createLayer('maze');
 	this.boundsLayer = this.map.createLayer('enemyBounds');
+//	this.doorLayer = this.map.createLayer("gate");
+	//this.keyLayer = this.map.createLayer("key");
 	this.layer.resizeWorld(); //Resize game world to layer
-	console.log("Game world width is "+this.world.width + " and game world height is " + this.world.height);
+	
+
+	//Importing key object from the map
+	this.doorKeys = this.add.group();
+	this.doorKeys.enableBody = true;
+
+	this.map.createFromObjects('key',145,'key',0,true,false,this.doorKeys);
+	//Importing door object from the map
+	this.doors = this.add.group();
+	this.doors.enableBody = true;
+	this.doors.immovable = true;
+
+	this.map.createFromObjects('gate',144,'door',0,true,false,this.doors);
 	
 	//this.layer = this.map.createLayer('rename');
 	//this.layer.resizeWorld();
@@ -57,7 +76,8 @@ state.egypt.prototype = {
 
 	this.physics.arcade.collide(this.player, this.layer,function(){ jumpEnable = true; },null,this);
 	this.physics.arcade.collide(this.enemies, this.layer);
-	this.physics.arcade.collide(this.enemies, this.boundsLayer, function(){ this.enemy.body.velocity.x *= -1; console.log("It collided HERE NIGGAH\t(" + this.enemy.body.x + ", " +this.enemy.body.y+")"); },null,this);
+	this.physics.arcade.collide(this.player, this.doors,this.openDoor,null,this);
+	this.physics.arcade.overlap(this.player, this.doorKeys, this.collectKey,null,this);
 	
 	this.player.body.velocity.x = 0;
 
@@ -88,7 +108,6 @@ state.egypt.prototype = {
 	    jumpEnable = false;
 	}
 	
-	console.log(this.player.body.x + " " + this.player.body.y)
     },
 
     spawnEnemy: function() {
@@ -99,8 +118,6 @@ state.egypt.prototype = {
 	    this.physics.arcade.enable(this.enemy);
 	    this.enemy.body.gravity.y = 400;
 	    this.enemy.body.bounce.y = 0.1;
-	    //this.enemy.animations.add('left',[],10,true);
-	    //this.enemy.animations.add('right',[],10,true);
 	    this.enemy.animations.add('walk');
 	}
 
@@ -125,6 +142,16 @@ state.egypt.prototype = {
 	    
 	}, this);
 
+    },
+
+    collectKey: function(player, key){
+
+	key.kill();
+	collectedKey = true;
+    },
+
+    openDoor: function(player, door){
+	    door.kill();
     }
 
 }

@@ -110,10 +110,9 @@ state.Game.prototype = {
     
     pickUp: function() {
 	this.cellphones.destroy();
-	this.tempText = this.add.text(this.player.x,this.player.y-20,"",{size: "6px", fill:"#FFF", align: "center"});
+	this.tempText = this.add.text(this.player.x - 10,this.player.y-20,"",{size: "6px", fill:"#FFF", align: "center"});
 	this.tempText.setText("Huh..why he drop this?");
-	this.state.pause('Game');
-	this.state.start('textScene1');
+	this.time.events.add(Phaser.Timer.SECOND*2,function(){this.state.start('textScene1');},this);
     }
 
 

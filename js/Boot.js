@@ -14,7 +14,7 @@ state.Boot.prototype = {
     },
     create: function(){
 
-	this.intro = this.add.text(this.world.centerX, this.world.height/5,"",{size: "32px", fill:"#FFF", align: "center"}); //Setting the introduction text object
+	this.intro = this.add.text(this.world.centerX - 100, this.world.height/5,"",{size: "32px", fill:"#FFF", align: "center"}); //Setting the introduction text object
 
 	this.intro.anchor.setTo(0.5,0.5); //Anchoring it to top center
 
