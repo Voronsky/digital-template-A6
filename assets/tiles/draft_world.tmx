@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="1">
+ <tileset firstgid="1" name="tiles3" tilewidth="48" tileheight="48">
+  <image source="tiles3.png" trans="ffffff" width="560" height="640"/>
+ </tileset>
+ <layer name="rename" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztlkkOwyAMAP0h/v+9yjeEvNIkeGGkqFUIwVODXYD4jNMBfMz1rc2AXs6dXJHrW5vrW5vrW5suvmO5qjOmz8q+a147ua73MmCJVfPM6krtVe4CyOOJULninqGey+gq7UUtrxl9PWPrvs8AlVPLHs1WmzTP+R41J4OrFKvkqtXkaGixavs5i6ulb1jdMvQdLpfcd493tFxzsVh6qNUtgifi7aPzmPY7aO/5GslHmuPJeRR2Y4l8RnfyJ70rsiswa1d1BWL9nd6x22tO+D+xntc14vn1zLfU3yh7+u0aHCGnM0/XpnUcII4r4o3j3xp1Gk8suzU4EtZ4Krgilpi859X63hNIcVn7TCa4eKX6mtUVoeqnVFsj1lwv0f4DvU0XT6SD46UPP2FeS5c=
+  </data>
+ </layer>
+</map>

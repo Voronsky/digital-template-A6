@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="48" tileheight="48" nextobjectid="1">
+ <tileset firstgid="1" name="tiles3" tilewidth="48" tileheight="48">
+  <image source="tiles3.png" trans="ffffff" width="560" height="640"/>
+ </tileset>
+ <layer name="maze" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztlluuwyAMRNlQ//nP/vdURSoSSsH2jIHgpiOh28vDnsMzKWF6BS9PUr7bwGL9eTFFOyc58cwR7wWWN+o9yPAy935O37nyjWUEq6SIvJ69y8ztDFk9eM9pJN4Rd1IE3rP+ylfq2Dw78566crLvzO68pf4pvEWjviN25q29zeCd9ZZa5lTr80rf7HfzSZ6tvDN81zoMuVDl6m/rd2+MZb68vDPOL7Lu1zHedo1jN95Z5x/th4iJZ93H2viovJ79sVoeXtZvZF7GOzKGvdu1eIhG5fwFXpRBU/2tNoOXfY+Q3OjcIB4s8eq+o3hH3c+ID4tmrW/PC7MePTHf1721tfCiYvdfS4X1+BTUQ8uTdQySp/Zo8SnxInFaPlr/S2PQ+Civ1MfL2/JnHaP124lX8qf1Q2Ltxsu8J0isVbzXeqRoPFL+kcXCewj1v8hb1yNieWeo50Vb2xE5aq3mldpWrq93X2p5JCZpjRHNWF8vr9TG7OFenJ4YXimX5sUSS2vTcuzEO/IuR9qKmPdI8tET+35JZ13K0dOo+9l79qzxn8CLvhGReZk3UeP1nK1o5eR9A8667PU=
+  </data>
+ </layer>
+ <layer name="enemyBounds" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztlksOgCAMRLk89zYuTIwBQVrqtNO3MgaYPpRPKYkG9e8CjEnf2LD5XrB5P31r410k2H2TxBq2f5DJl8n1JILvrINH19Z5PuPh9R4g8WWDzZnN98TrOl4lgi/bfqXla/XtpRlaNa6O87Ufm6+Uv313s3K/mh3XyvlLzi5f7bEQckag1HGxux42X0S8nBtasPmu4sm3Fvn5iOKbZ57vnBGRfEfrDmXO70j3CM++vedR/7e2aM6Wvr22lnOCkIVQg2UWQg2WWQg1eM/qgVCDJWy+iR8Oe/87Ow==
+  </data>
+ </layer>
+</map>
